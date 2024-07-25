@@ -2,8 +2,6 @@ package com.example.myapplication
 
 import android.os.Bundle
 import android.util.Log
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -12,6 +10,8 @@ import com.example.myapplication.common.BaseActivity
 private const val TAG = "MainActivity"
 
 class MainActivity : BaseActivity() {
+
+    private var status:Boolean = false
 
     private val btn by findView<Button>(R.id.btn)
     private val btn2 by findView<Button>(R.id.btn2)
@@ -24,6 +24,7 @@ class MainActivity : BaseActivity() {
 
         btn.setOnClickListener {
             testAnim()
+            this.status = !this.status
         }
 
         btn2.setOnClickListener {
